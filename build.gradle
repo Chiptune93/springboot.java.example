@@ -18,16 +18,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	/* boot starter web */
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.10'
+
 	/* additional dependency */
 
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.4'
-	
 	// https://mvnrepository.com/artifact/org.aspectj/aspectjrt
 	runtimeOnly group: 'org.aspectj', name: 'aspectjrt', version: '1.9.19'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.7.4'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.7.10'
 
 	/* additional dependency */
 }
