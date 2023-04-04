@@ -14,11 +14,23 @@ repositories {
 	maven { url 'https://repo.spring.io/snapshot' }
 }
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	/* additional dependency */
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.10'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+	implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.7.10'
 
 	/* additional dependency */
 }
