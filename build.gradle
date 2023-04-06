@@ -24,6 +24,16 @@ dependencies {
 
 
 	/* additional dependency */
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+	// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
+
+	// https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
+	implementation group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.7'
+
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
 
 	/* additional dependency */
 }
