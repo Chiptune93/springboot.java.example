@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: springboot-jsp-sample
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:h2-test;TRACE_LEVEL_FILE=4;MODE=MySQL
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+      maximum-pool-size: 10
+  h2:
+    console:
+      enable: true
+      path: /h2-console
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          max-age: 1800
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    # devtool config
+    # 정적 리소스 수정에도 재시작 없이 변경사항 적용
+  devtools:
+    livereload:
+      enabled: true
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    return-instance-for-empty-row: true
+  type-aliases-package: dev.chiptune.springboot.data

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="main" template="/WEB-INF/views/layout/main/layout.jsp">
+        <put-attribute name="HEADER" value="/WEB-INF/views/layout/main/header.jsp" />
+        <put-attribute name="NAVIGATION" value="/WEB-INF/views/layout/main/navigation.jsp" />
+        <put-attribute name="FOOTER" value="/WEB-INF/views/layout/main/footer.jsp" />
+    </definition>
+    <!-- spring framework 에서는 jsp를 생략해도 됐는데. 여기서는 해줘야 해당 뷰를 찾는다 ...  -->
+    <definition name="**.main.jsp" extends="main">
+        <put-attribute name="CONTENT" value="{1}.jsp" />
+    </definition>
+</tiles-definitions>
