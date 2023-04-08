@@ -1,0 +1,8 @@
+server:
+  port: ${service_port:5001}
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  application:
+    name: webclient

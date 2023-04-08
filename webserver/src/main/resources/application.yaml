@@ -1,0 +1,8 @@
+server:
+  port: 5011
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  application:
+    name: webserver
