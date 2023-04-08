@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: file-upload-test
+  servlet:
+    multipart:
+      #location: /Users/dk/Documents/GitHub/Library/Spring/FileUpload/SpringBoot/example/src/main/resources/upload
+      location: C:\Users\syworks\Desktop\Library\Spring\FileUpload\SpringBoot\example\src\main\resources\upload
+      # 서블릿 옵션으로 파일 용량 제한 거는 방법
+      # 구체적으로 컨트롤 하기 위해 업로드 시 제한하는 것으로 수정
+      #max-file-size: 2MB
+      #max-request-size: 2MB
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  # DB 추가.
+  datasource:
+    hikari:
+      jdbc-url: jdbc:log4jdbc:postgresql://localhost:5432/postgres
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      username: postgres
+      password: 1tkdlqjvpn!
+      maximum-pool-size: 5

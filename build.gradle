@@ -1,7 +1,7 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '2.7.10'
-	id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'org.springframework.boot' version '2.7.10'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group = 'dev.chiptune'
@@ -9,25 +9,42 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
-	maven { url 'https://repo.spring.io/milestone' }
-	maven { url 'https://repo.spring.io/snapshot' }
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
-	/* boot starter web */
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.10'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    /* boot starter web */
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.10'
 
 
-	/* additional dependency */
+    /* additional dependency */
 
-	/* additional dependency */
+    // dev tool ( 정적 리소스 재시작없이 적용 )
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools'
+
+    // jstl
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    // jasper
+    implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.56'
+
+    // mybatis-spring-boot
+    implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
+
+    // jdbc ( postgresql - jdbc driver )
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.1'
+
+    // log4j2
+    implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+    /* additional dependency */
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }

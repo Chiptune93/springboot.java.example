@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.chiptune.springboot.repository.FileUploadRepository">
+    
+    <select id="getMasterSeq" resultType="int">
+        insert into file_master (
+            master_seq
+            ,reg_id
+            ,reg_dttm
+        ) values (
+            nextval('master_seq')
+            ,coalesce(#{regId},'system')
+            ,now()
+        )
+        RETURNING currval('master_seq')
+    </select>
+
+    <select id="insertFile" parameterType="HashMap" resultType="int">
+        insert into file (
+            seq
+            ,master_seq
+            ,file_name
+            ,file_path
+            ,file_type
+            ,file_size
+            ,file_ext
+        ) values (
+            nextval('seq')
+            ,#{fileMasterSeq}::numeric
+            ,#{fileName}
+            ,#{filePath}
+            ,#{fileType}
+            ,#{fileSize}
+            ,#{fileExt}
+        )
+        returning currval('seq')
+    </select>
+
+    <select id="info" parameterType="int" resultType="HashMap">
+        select
+            *
+        from
+            file
+        where
+            1=1
+            and seq = #{seq}
+    </select>
+
+</mapper>
