@@ -1,2 +1,10 @@
-# springboot-examples
-springboot-examples
+# File Upload
+
+## Feature
+
+- 파일업로드 4가지 패턴 예시
+  - 단순 파일 서버 경로(프로젝트 경로) 업로드
+  - 서버에 업로드 후, 파일 정보 DB 저장
+  - 서버에 업로드 후, 파일 정보 DB 저장 및 예외 처리 등
+  - 다중 업로드 지원
+- http://localhost:8080/ 에서 테스트 가능
