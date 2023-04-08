@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.chiptune.springboot.repository.userRepo">
+    <select id="getV1" parameterType="HashMap" resultType="DataJsonClass">
+        select
+            'getv2' as uri 
+            <if test='id'>,user_id</if>
+            <if test='name'>,user_name</if>
+            <if test='email'>,user_email</if>
+            <if test='age'>,user_age</if>
+            <if test='address'>,user_address</if>
+            ,user_enter_date
+        from
+            members
+    </select>
+    <select id="getV2" parameterType="HashMap" resultType="DataJsonClass">
+        select
+            'getv1' as uri 
+            <if test='id'>,user_id</if>
+            <if test='name'>,user_name</if>
+        from
+            members
+    </select>
+</mapper>

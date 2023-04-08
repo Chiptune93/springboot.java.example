@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: REST-API
+  datasource:
+    hikari:
+      # 메모리를 사용하여 DB를 올린다.
+      jdbc-url: jdbc:h2:mem:h2-test
+      # 파일 형태를 사용하고자 한다면 다음과 같이 사용한다.
+      # jdbc-url: jdbc:h2:file:{경로}/{파일명}
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+      generate-unique-name: false
+      maximum-pool-size: 4
+  h2:
+    console:
+      enable: true
+      path: /h2-console
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: dev.chiptune.springbootdata
