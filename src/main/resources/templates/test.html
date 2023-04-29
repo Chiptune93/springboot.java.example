@@ -5,6 +5,21 @@
     <title>Document</title>
 </head>
 <body>
-hi
+<table>
+    <thead>
+    <th>아이디</th>
+    <th>이름</th>
+    <th>나이</th>
+    <th>가입일</th>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${users}">
+        <td th:text="${item.userId}">Item Id</td>
+        <td th:text="${item.userName}">Item Name</td>
+        <td th:text="${item.userAge}">Item Age</td>
+        <td th:text="${item.userJoinDate}">Item joinDate</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
