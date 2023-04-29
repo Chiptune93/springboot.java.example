@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: h2-database-sample
+  datasource:
+    hikari:
+      #      메모리 상에 데이터베이스를 올리겠다.
+      #      jdbc:h2:mem:h2-test;
+      #
+      #      파일로 DB를 관리하면 지정된 경로에 DB 파일을 생성 또는 가져와 구동
+      #      jdbc:h2:file:~/Develop/Github/SpringBlogExam/test_db;
+      #
+      #      로그 추적 가능하게 트레이스 레벨 설정
+      #      jdbc:h2:mem:h2-test;TRACE_LEVEL_FILE=4;
+      #
+      #      데이터베이스 실행 모드를 MYSQL 로 설정, ORACLE 및 POSTGRES 도 가능.
+      #      jdbc:h2:mem:h2-test;TRACE_LEVEL_FILE=4;MODE=MySQL
+      jdbc-url: jdbc:h2:mem:h2-test;TRACE_LEVEL_FILE=4;MODE=MySQL
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+      maximum-pool-size: 10
+  h2:
+    console:
+      enable: true # localhost:8080/h2-console 로 접속하면 아래와 같은 화면이 나오며, 접속이 가능하다.
+      path: /h2-console
