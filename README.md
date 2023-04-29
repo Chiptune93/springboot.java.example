@@ -1,45 +1,43 @@
-# springboot-examples
+# Thymeleaf Examples
 
-- spring boot examples in branches
+## What is Thymeleaf
 
-## Branches
+Thymeleaf는 HTML, XML, JavaScript, CSS와 같은 웹 문서를 만들기 위한 자바 템플릿 엔진입니다. Spring Boot에서는 Thymeleaf를 사용하여 서버 측의 데이터를 템플릿과 결합하여 동적으로 생성된 웹 페이지를 생성할 수 있습니다.
 
-- **master** 
-- **[aop](https://github.com/Chiptune93/springboot-examples/tree/aop)**
-    - LogAspect 
-        - 메소드 실행 전/후로 로그를 남기기 위한 Log AOP 클래스
-    - NoLogging
-        - Log AOP 에서 특정 클래스/메소드에 AOP 미적용하기 위한 어노테이션 클래스
-    - RunningTimeAspectForSpring 
-        - Spring 에서 실행시간 계산하는 AOP 클래스 등록 및 사용.
-    - RunningTimeAspectForSpringBoot 
-        - SpringBoot 에서 실행시간 계산하는 AOP 클래스 사용.
-- **[aync-config](https://github.com/Chiptune93/springboot-examples/tree/aync-config)**
-    - AsyncConfig 
-        - 비동기 처리를 위한 스레드 실행 계획 설정 클래스
-- **[cors](https://github.com/Chiptune93/springboot-examples/tree/cors)**
-    - SampleController 
-        - 컨트롤러 레벨에서 CORS를 컨트롤하기 위한 설정 예시
-    - WebConfig 
-        - SpringBoot Config 레벨에서 CORS를 컨트롤하기 위한 설정 예시
-    - CorsFilter 
-        - Filter를 이용한 CORS 처리 예시
-- **[dynamic-datasource](https://github.com/Chiptune93/springboot-examples/tree/dynamic-datasource)**
-    - SQLConfig 
-        - 마스터/슬레이브 데이터베이스 설정을 위한 멀티 데이터 소스 예시
-    - SQLRoutingDataSource 
-        - 어노테이션을 통한 분기 처리용 클래스
-- **[file-upload](https://github.com/Chiptune93/springboot-examples/tree/file-upload)**
-    - springboot file upload sample
-- **[file-upload](https://github.com/Chiptune93/springboot-examples/tree/h2-database)**
-    - springboot h2 database usage sample
-- **[jsp-for-view](https://github.com/Chiptune93/springboot-examples/tree/jsp-for-view)**
-    - springboot use jsp for view
-- **[msa-architecture](https://github.com/Chiptune93/springboot-examples/tree/msa-architecture)**
-    - sample projects for msa architecture
-- **[restapi](https://github.com/Chiptune93/springboot-examples/tree/restapi)**
-    - REST API usage sample
-- **[spring-cloud](https://github.com/Chiptune93/springboot-examples/tree/spring-cloud)**
-    - web client & server for spring cloud
-- **[swagger](https://github.com/Chiptune93/springboot-examples/tree/swagger)**
-    - springboot swagger sample
+Thymeleaf는 HTML 파일에서 서버 측의 데이터를 쉽게 바인딩할 수 있는 문법을 제공합니다. 예를 들어, 다음과 같이 서버 측에서 전달된 데이터를 HTML 문서에 출력할 수 있습니다.
+
+## How to Use
+
+### 1. 의존성 추가
+
+- Maven
+    
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    ```
+  
+- Gradle
+
+    ```gradle
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+    ```
+
+- 추가 의존성
+  - boot-starter-web
+  - boot-starter-test
+
+### 2. 정적 리소스 파일 경로 설정
+
+```text
+- resources
+    - static <- css/js 같은 에셋들을 저장하는 장소. 자동으로 인식함.
+    - templates <- html 파일을 위치시키는 장소.
+```
+
+templates 폴더 하위에 있는 html 파일들은 static 폴더 하위의 정적 파일로 접근과 다르게 url을 바로 호출할 수 없습니다.
+
+### 3. thymeleaf 옵션 설정
