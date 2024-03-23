@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    postgres:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/public
+      username: user
+      password:
+      hikari:
+        connection-timeout: 3000
+        validation-timeout: 3000
+        minimum-idle: 5
+        max-lifetime: 240000
+        maximum-pool-size: 20

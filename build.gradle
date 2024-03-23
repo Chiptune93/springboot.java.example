@@ -24,6 +24,11 @@ dependencies {
 
 
 	/* additional dependency */
+	/* Spring Data Jdbc*/
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+	/* Database Driver */
+	implementation 'org.postgresql:postgresql'
 
 	/* additional dependency */
 }

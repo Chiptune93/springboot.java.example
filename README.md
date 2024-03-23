@@ -69,4 +69,8 @@
 
 
 - **[Thymeleaf](https://github.com/Chiptune93/springboot-examples/tree/thymeleaf)**
-    - Quick Start Thymeleaf Example 
+    - Quick Start Thymeleaf Example
+
+
+- **[spring-data-jdbc](https://github.com/Chiptune93/springboot-examples/tree/spring-data-jdbc)**
+    - Spring Data JDBC Usage Example
