@@ -1,6 +1,8 @@
 package dev.chiptune.springboot.config;
 
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -24,7 +26,7 @@ import javax.sql.DataSource;
 // 이를 통해 개발자는 데이터베이스 연결에 대한 더 세밀한 제어 및 커스텀 구성을 적용할 수 있습니다.
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @EnableJdbcRepositories(
-        basePackages = {"dev.chiptune.springboot.repository"}
+        basePackages = {"dev.chiptune.springboot.repository.data"}
         , transactionManagerRef = "postgresTransactionManager")
 public class PostgresConfig {
 
@@ -50,5 +52,12 @@ public class PostgresConfig {
     @Bean
     public DataSourceTransactionManager postgresTransactionManager(DataSource postgresDataSource) {
         return new DataSourceTransactionManager(postgresDataSource);
+    }
+
+    // MyBatis와 연동하기 위한 SqlSessionTemplate 빈을 구성합니다.
+    // 이 템플릿은 SQL 실행과 트랜잭션 관리를 담당하며, 필요한 설정을 자동으로 적용합니다.
+    @Bean
+    public SqlSessionTemplate postgresSqlSessionTemplate(SqlSessionFactory postgresSqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(postgresSqlSessionFactory);
     }
 }

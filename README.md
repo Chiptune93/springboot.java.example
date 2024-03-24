@@ -74,3 +74,11 @@
 
 - **[spring-data-jdbc](https://github.com/Chiptune93/springboot-examples/tree/spring-data-jdbc)**
     - Spring Data JDBC Usage Example
+
+- **[spring-data-jdbc-with-mybatis](https://github.com/Chiptune93/springboot-examples/tree/spring-data-jdbc-with-mybatis)**
+    - Spring Data JDBC + Mybatis Example
+    - Mybatis 3.x 
+      - Querying with Annotation
+      - also can use xml file
+        - set `mapper-location` (ex: /resources/mapper/**/*.xml)
+        - make xml files
