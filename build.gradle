@@ -1,12 +1,12 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.7.10'
-    id 'io.spring.dependency-management' version '1.1.0'
+    id 'org.springframework.boot' version '3.4.4'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'dev.chiptune'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -23,6 +23,21 @@ dependencies {
     // 기본 테스트용 데이터베이스 및 JPA 구성
     implementation 'com.h2database:h2'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring Web & Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // JJWT 최신버전 (0.11.x) - BOM 방식으로 관리
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    // (선택) Javax Servlet API for filters (이미 포함되어 있을 수 있음)
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
