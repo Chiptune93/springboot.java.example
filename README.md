@@ -4,8 +4,8 @@
 
 ## Springboot Version
 
-- [x] Springboot 2.7.18
-- [x] Java 11
+- [x] Springboot 3.4.4
+- [x] Java 17
 
 
 ## Branches
@@ -33,6 +33,7 @@
 - feature/spring-security/jwt-token
 - feature/spring-security/security-entire-error-handling
 - feature/spring-security/security-error-handling
+- *feature/spring-security/security-error-handling (springboot 3.4.4 / JDK 17 Examples)
 - front-view/jsp-for-view
 - front-view/thymeleaf
 - logging/log4j2-to-mongodb
